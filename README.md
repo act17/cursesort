@@ -3,7 +3,7 @@ A Curses-Based Sorting Algorithm Display
 
 Current Version:
 
-Release 1.0.0 | 2023/06/22
+Release 1.1.0 | 2023/06/24
 
 
 # Description
@@ -22,6 +22,13 @@ Release 1.0.0 | 2023/06/22
 
 
 # Changelog
+
+  Release 1.1.0 (2023/06/24)
+  - Added two new files, ``./src/sorts/cocktail.c`` and ``./src/sorts/bogo.c``. These two files contain functions for Cocktail-Sort (``void cocktailsort(int* array, int size, int delay, unsigned long* comp``) and Bogo-Sort (``void bogosort(int* array, int size, int delay, unsigned long* comp)``.
+  - The number of speeds the user can choose for the process of sorting has increased from 3 to 7, randing from 100ms/Comparison to 1.56ms/Comparison speeds. This change is reflected in ``delaysel.c``.
+  - A new feature has been introduced to ``void comp()`` - the display of the current array in the center of the information window.
+  - Headers in ``cursesort.c`` have been updated to reflect the increase in sorting algorithms. ``branch.c`` has also been updated to reflect this change.
+  - The two new files added have been added to ``Makefile``.
 
   Release 1.0.0 (2023/06/22)
   - Added ``Makefile``.
