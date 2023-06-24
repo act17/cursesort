@@ -9,10 +9,12 @@ void comp(int Y, int X)
 {
 
   // Name-related char*s
-  char* anames[3] = {
+  char* anames[5] = {
     "Bubble Sort",
     "Quick Sort",
-    "Insertion Sort"
+    "Insertion Sort",
+    "Cocktail Sort",
+    "Bogo Sort"
   };
 
   // Nessicary variables:
@@ -22,6 +24,7 @@ void comp(int Y, int X)
   int userinput = 0;
   unsigned long comparisons = 0;
   unsigned long elapsedtime = 0;
+  double elapsedtimebuffer = 0;
   double elapsedtimeseconds = 0;
   randomizer(array, 0, 32);
 
@@ -56,6 +59,7 @@ void comp(int Y, int X)
     mvwprintw(infowin,3,1,"Delay:");
     mvwprintw(infowin,7,1,"Comparisons:");
     mvwprintw(infowin,9,1,"Elapsed Time:");
+    mvwprintw(infowin,11,1,"Array:");
     mvwprintw(infowin,29,1,"Controls:");
     mvwprintw(infowin,30,1,"A - Select Algorithm       | D - Select Delay");
     mvwprintw(infowin,31,1,"S/R - Scramble/Reset Array | RETURN - Begin Sorting");
@@ -77,6 +81,11 @@ void comp(int Y, int X)
     mvwprintw(infowin,4,1,"%d ns",delay);
     mvwprintw(infowin,8,1,"%u",comparisons);
     mvwprintw(infowin,10,1,"%lf ms",elapsedtimeseconds);
+    for(int i = 0; i < 16; i++)
+      mvwprintw(infowin,12,1 + (i * 3),"%d",array[i]);
+    for(int i = 0; i < 16; i++)
+      mvwprintw(infowin,13,1 + (i * 3),"%d",array[i + 16]);
+
 
     // Refreshing:
     wrefresh(stdscr);
@@ -143,16 +152,25 @@ void comp(int Y, int X)
             sortedcheck = 1;
           }
           wrefresh(arraywin[i]);
+          wrefresh(stdscr);
         }
+
+
         if(sortedcheck >= 32)
           break;
         else
           sortedcheck = 1;
+
         nanosleep(&ts,&ts);
         elapsedtime = elapsedtime + delay;
-        elapsedtimeseconds = elapsedtime / 1000000;
+        elapsedtimebuffer = elapsedtime;
+        elapsedtimeseconds = elapsedtimebuffer / 1000000;
         mvwprintw(infowin,8,1,"%u",comparisons);
         mvwprintw(infowin,10,1,"%f ms",elapsedtimeseconds);
+        for(int i = 0; i < 16; i++)
+          mvwprintw(infowin,12,1 + (i * 3),"%d  ",array[i]);
+        for(int i = 0; i < 16; i++)
+          mvwprintw(infowin,13,1 + (i * 3),"%d  ",array[i + 16]);
         wrefresh(infowin);
       }
 
