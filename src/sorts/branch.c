@@ -14,6 +14,12 @@ void* sortbranch(void* args)
   case 2:
     insertion(sortargs->array, 32, sortargs->delay, sortargs->comp);
     break;
+  case 3:
+    cocktailsort(sortargs->array, 32, sortargs->delay, sortargs->comp);
+    break;
+  case 4:
+    bogosort(sortargs->array, 32, sortargs->delay, sortargs->comp);
+    break;
   default:
     bubble(sortargs->array, 32, sortargs->delay, sortargs->comp);
     break;
