@@ -12,6 +12,9 @@ void* sortbranch(void* args);
 void bubble(int* sorted, int size, int delay, unsigned long* comp);
 void qksrt(int* array, unsigned long* comp, int min, int max, int delay);
 void insertion(int* sorted, int size, int delay, unsigned long* comp);
+void cocktailsort(int* array, int size, int delay, unsigned long* comp);
+void bogosort(int* array, int size, int delay, unsigned long* comp);
+
 struct argumentstruct {
   int algol;
   int delay;
@@ -19,8 +22,8 @@ struct argumentstruct {
   unsigned long *comp;
 };
 
-#define NUMBER_OF_ALGORITHMS 3
-#define VERSION_ID "Relase 1.0.0"
-#define VERSION_DATE "2023-06-22"
+#define NUMBER_OF_ALGORITHMS 5
+#define VERSION_ID "Relase 1.1.0"
+#define VERSION_DATE "2023-06-24"
 
 #endif
