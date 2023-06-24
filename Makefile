@@ -1,4 +1,4 @@
-OBJS = src/main.c src/comp.c src/randomizer.c src/menu/infoscreen.c src/menu/algolsel.c src/menu/delaysel.c src/sorts/branch.c src/sorts/bubble.c src/sorts/quick.c src/sorts/insert.c
+OBJS = src/main.c src/comp.c src/randomizer.c src/menu/infoscreen.c src/menu/algolsel.c src/menu/delaysel.c src/sorts/branch.c src/sorts/bubble.c src/sorts/quick.c src/sorts/insert.c src/sorts/cocktail.c src/sorts/bogo.c
 CFLAG = -Wall -Werror -Wpedantic -O2
 DFLAG = -Wall -Wpedantic -g
 CC = gcc
