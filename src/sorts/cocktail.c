@@ -10,9 +10,9 @@ void cocktailsort(int* array, int size, int delay, unsigned long *comp)
   ts.tv_sec = 0;
   ts.tv_nsec = delay;
 
-  int current,next;
+  int current = 0;
+  int next = 0;
   int offset = 0;
-
 
   for(int a = 0; a < size; a++) {
 
